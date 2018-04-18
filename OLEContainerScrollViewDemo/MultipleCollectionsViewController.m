@@ -34,7 +34,7 @@
     
     for (NSInteger collectionViewIndex = 0; collectionViewIndex < numberOfTableViews; collectionViewIndex++) {
         UIView *tableView = [self preconfiguredTableView];
-        NSInteger randomNumberOfRows = 100 + arc4random_uniform(10);
+        NSInteger randomNumberOfRows = 5 + arc4random_uniform(10);
         [self.tableViews addObject:tableView];
         [self.numberOfRowsPerTableView addObject:@(randomNumberOfRows)];
         [self.cellColorsPerTableView addObject:[UIColor randomColor]];
@@ -150,6 +150,14 @@
     UIColor *cellColor = self.cellColorsPerTableView[tableViewIndex];
     cell.backgroundColor = cellColor;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"will display: %ld", indexPath.row);
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"did selected: %ld", indexPath.row);
 }
 
 @end

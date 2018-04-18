@@ -211,7 +211,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Multiple Collection Views" id="im0-S9-CxI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="k0y-qv-H0f"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="k0y-qv-H0f">
+                            <connections>
+                                <action selector="addTableViewCell:" destination="adM-BP-Lmn" id="qjv-OI-KKF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="containerScrollView" destination="uRR-Xs-AGZ" id="og4-Hp-AXM"/>
